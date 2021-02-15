@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_050242) do
 
   create_table "questions", force: :cascade do |t|
     t.integer "game_id", null: false
-    t.string "difficulty"
     t.text "content"
     t.string "correct_answer"
     t.string "option_a"

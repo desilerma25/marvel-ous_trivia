@@ -2,7 +2,7 @@ class CreateQuestions < ActiveRecord::Migration[6.1]
   def change
     create_table :questions do |t|
       t.belongs_to :game, null: false, foreign_key: true
-      t.string :difficulty
+      # t.string :difficulty
       t.text :content
       t.string :correct_answer
       t.string :option_a
