@@ -5,4 +5,14 @@ class Game{
     }
 
     //instance method thats going to render the obj to dom
+    renderGame() {
+        let gamesDiv = document.getElementById("games-container")
+
+        gamesDiv.innerHTML +=
+        `
+        <ul>
+        <li> ${this.difficulty} </li>
+        </ul>
+        `
+    }
 }
