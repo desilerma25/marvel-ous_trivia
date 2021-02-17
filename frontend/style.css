@@ -1,5 +1,26 @@
 body {
-    background-color: crimson;
-    font-family: Marvel;
+    /* background-color: crimson; */
+    font-family: "Earth's Mightiest";
+    font-size: 200%;
+    background-image: url("vintage-comic-book-wallpaper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+   
 }
+
+input {
+    font-family: "Earth's Mightiest"; 
+    font-size: 80%;
+}
+
+#questions-form {
+    text-align: center;
+    border-color: black;
+    border: 10px;
+    background-color: rgba(254, 254, 254, 0.414)
+}
+
+
 

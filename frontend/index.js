@@ -62,5 +62,5 @@ createQuestionForm.addEventListener('submit', handleQuestionSubmit)
 
 function handleQuestionSubmit(event) {
     event.preventDefault()
-    
+
 }
