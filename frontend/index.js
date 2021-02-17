@@ -41,13 +41,13 @@ function createQuestionForm() {
         Question: <input type="text" id="content"> <br>
         Correct Answer: <input type="text" id="correct_answer"> <br>
         Difficulty: <br>
-            <input type="radio" id="beginner" name="difficulty" value="beginner">
+            <input type="radio" id="beginner" name="difficulty" value="1">
             <label for="beginner">Beginner</label> <br>
 
-            <input type="radio" id="intermediate" name="difficulty" value="intermediate">
+            <input type="radio" id="intermediate" name="difficulty" value="2">
             <label for="intermediate">Intermediate</label> <br>
 
-            <input type="radio" id="expert" name="difficulty" value="expert">
+            <input type="radio" id="expert" name="difficulty" value="3">
             <label for="expert">Expert</label> <br>
         Please insert the correct answer it one of the answer options. <br>
         Answer Option A: <input type="text" id="option_a"> <br>
@@ -82,7 +82,31 @@ function questionFormSubmit(event) {
             difficulty = radios[i].value
         }
     }
-    console.log(newContent, newCorrect, newOptA, newOptB, newOptC, newOptD, difficulty)
+    // console.log(newContent, newCorrect, newOptA, newOptB, newOptC, newOptD, difficulty)
+    // bundle info to make fetch post req to backend and persist to db
+    let question = {
+        content: newContent,
+        correct_answer: newCorrect,
+        game_id: difficulty,
+        option_a: newOptA,
+        option_b: newOptB,
+        option_c: newOptC,
+        option_d: newOptD
+    }
+
+    fetch(`${BASE_URL}/questions`, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(question)
+    })
+    .then(resp => resp.json())
+    .then(question => {
+        let q = new question(question.id, question.content, question.correct_answer, question.game_id, question.option_a, question.option_b, question.option_c, question.option_d)
+        q.renderQSubmissionsPopUp();
+    })
 }
 
 
