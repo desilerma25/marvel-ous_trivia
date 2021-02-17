@@ -1,10 +1,10 @@
 // Main file where everything will happen, keep small
 document.addEventListener("DOMContentLoaded", () => {
-    fetchGames();
+    // fetchGames();
     createQuestionForm();
 })
 
-let questionForm = document.getElementById("questions-form")
+// let questionForm = document.getElementById("questions-form")
 
 const BASE_URL = "http://127.0.0.1:3000"
 
@@ -56,11 +56,10 @@ function createQuestionForm() {
         Answer Option D: <input type="text" id="option_d"> <br>
         <input type="submit" value="Add your question!">
     </form>
-    `;
+    `
 
     questionForm.addEventListener("submit", () =>{
-        console.log("working");
-        // this is not working
+        debugger;
     })
 
 }
