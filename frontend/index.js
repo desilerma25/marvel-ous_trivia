@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     createQuestionForm();
 })
 
+let questionForm = document.getElementById("questions-form")
+
 const BASE_URL = "http://127.0.0.1:3000"
 
 //need a read (fetch games index)
@@ -32,7 +34,6 @@ function fetchGames() {
 
 function createQuestionForm() {
     let questionForm = document.getElementById("questions-form")
-
     questionForm.innerHTML +=
     `
     To add a question to our game, please complete the info below. <br><br>
@@ -55,12 +56,12 @@ function createQuestionForm() {
         Answer Option D: <input type="text" id="option_d"> <br>
         <input type="submit" value="Add your question!">
     </form>
-    `
+    `;
+
+    questionForm.addEventListener("submit", () =>{
+        console.log("working");
+        // this is not working
+    })
+
 }
 
-createQuestionForm.addEventListener('submit', handleQuestionSubmit)
-
-function handleQuestionSubmit(event) {
-    event.preventDefault()
-
-}
