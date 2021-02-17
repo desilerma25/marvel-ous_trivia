@@ -10,5 +10,5 @@ class Question{
         this.option_d = option_d
     }
 
-// render instance method
+// render instance method to display on DOM
 }
