@@ -1,6 +1,6 @@
 // Main file where everything will happen, keep small
 document.addEventListener("DOMContentLoaded", () => {
-    // fetchGames();
+    fetchGames();
     createQuestionForm();
 })
 
@@ -56,11 +56,36 @@ function createQuestionForm() {
         Answer Option D: <input type="text" id="option_d"> <br>
         <input type="submit" value="Add your question!">
     </form>
-    `
+    `;
 
-    questionForm.addEventListener("submit", () =>{
-        debugger;
-    })
+    questionForm.addEventListener("submit", questionFormSubmit)
 
 }
+
+function questionFormSubmit(event) {
+    event.preventDefault()
+    let newContent = document.getElementById("content").value
+    let newCorrect = document.getElementById("correct_answer").value
+    let newOptA = document.getElementById("option_a").value
+    let newOptB = document.getElementById("option_b").value
+    let newOptC = document.getElementById("option_c").value
+    let newOptD = document.getElementById("option_d").value
+
+    const radios = document.getElementsByName('difficulty');
+    let difficulty // creates undef vari
+
+    for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            // do whatever you want with the checked radio
+            // console.log("in the loop", radios[i].value);
+            // undef vari. gets its value here
+            difficulty = radios[i].value
+        }
+    }
+    console.log(newContent, newCorrect, newOptA, newOptB, newOptC, newOptD, difficulty)
+}
+
+
+
+
 
