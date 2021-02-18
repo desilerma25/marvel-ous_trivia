@@ -47,17 +47,17 @@ header {
 }
 
 button {
-    background-color: orange;
+    background-color: rgb(0, 0, 0);
     font-family: "Earth's Mightiest";
     font-size: 200%;
-    color: rgb(96, 126, 244);
+    color: rgb(240, 240, 240);
     width: 33%;
     
     
 }
 
 button:hover {
-    background-color: purple;
+    background-color: rgb(186, 30, 35);
 }
 
 #games-container {
