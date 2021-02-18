@@ -11,7 +11,9 @@ class Game{
         gamesDiv.innerHTML +=
         `
         <ul>
-        <li> ${this.difficulty} </li>
+        <button>
+        ${this.difficulty} 
+        </button>
         </ul>
         `
     }

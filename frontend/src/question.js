@@ -10,11 +10,13 @@ class Question{
         this.option_d = option_d
     }
 
-// render pop saying q was saved
+// render pop saying q was saved and hide form
     renderQSubmissionsPopUp() {
         let questionForm = document.getElementById("questions-form")
         alert("Thank you for your question submission!")
+        // may need to come back to this? Do I want it gone after q is submitted?
         questionForm.style.display = "none";
+        //render quiz?
     }
 }
 

@@ -18,8 +18,12 @@ input {
 #questions-form {
     text-align: center;
     border-color: black;
-    border: 10px;
-    background-color: rgba(254, 254, 254, 0.414)
+    border: 100px;
+    background-color: rgba(254, 254, 254, 0.414);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    /* line-height: 110%; */
+    /* box-shadow: peru; */
 }
 
 /* header {
@@ -42,5 +46,21 @@ header {
     align-content: center;
 }
 
+button {
+    background-color: orange;
+    font-family: "Earth's Mightiest";
+    font-size: 200%;
+    color: rgb(96, 126, 244);
+    width: 33%;
+    
+    
+}
 
+button:hover {
+    background-color: purple;
+}
+
+#games-container {
+    text-align: center;
+}
 

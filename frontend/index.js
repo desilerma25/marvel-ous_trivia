@@ -53,7 +53,7 @@ function createQuestionForm() {
         Answer Option A: <input type="text" id="option_a"> <br>
         Answer Option B: <input type="text" id="option_b"> <br>
         Answer Option C: <input type="text" id="option_c"> <br>
-        Answer Option D: <input type="text" id="option_d"> <br>
+        Answer Option D: <input type="text" id="option_d"> <br><br>
         <input type="submit" value="Add your question!">
     </form>
     `;
