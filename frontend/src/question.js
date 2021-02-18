@@ -10,5 +10,11 @@ class Question{
         this.option_d = option_d
     }
 
-// render instance method to display on DOM
+// render pop saying q was saved
+    renderQSubmissionsPopUp() {
+        let questionForm = document.getElementById("questions-form")
+        alert("Thank you for your question submission!")
+        questionForm.style.display = "none";
+    }
 }
+

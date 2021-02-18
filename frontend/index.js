@@ -104,7 +104,7 @@ function questionFormSubmit(event) {
     })
     .then(resp => resp.json())
     .then(question => {
-        let q = new question(question.id, question.content, question.correct_answer, question.game_id, question.option_a, question.option_b, question.option_c, question.option_d)
+        let q = new Question(question.id, question.content, question.correct_answer, question.game_id, question.option_a, question.option_b, question.option_c, question.option_d)
         q.renderQSubmissionsPopUp();
     })
 }
