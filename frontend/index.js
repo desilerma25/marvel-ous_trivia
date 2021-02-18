@@ -23,7 +23,6 @@ function fetchGames() {
     })
 }
 
-// need a read (fetch questions index)
 
 // need a create (fetch POST questions)
 

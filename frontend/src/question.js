@@ -10,7 +10,7 @@ class Question{
         this.option_d = option_d
     }
 
-// render pop saying q was saved and hide form
+    // render popup saying q was saved and hide form
     renderQSubmissionsPopUp() {
         let questionForm = document.getElementById("questions-form")
         alert("Thank you for your question submission!")
@@ -19,4 +19,41 @@ class Question{
         //render quiz?
     }
 }
+
+const difficultyLevelSelected = document.getElementById("games-container")
+
+// either forEach
+// or put event listener on games-container, if/else 
+
+// difficultyLevelSelected.addEventListener("click", renderDifficultyQs)
+
+// function renderDifficultyQs(event) {
+//     // listen for target click
+//     //if innerText === expert
+//     //pull all expert q's
+//     if (event.target.innerText === "Beginner") {
+//         debugger;
+//         // console.log("Beginner")
+//         // display q's with game_id 1
+//         renderQuestions(1)
+
+//     } else if (event.target.innerText === "Intermediate") {
+//         // display q's with game_id 2
+//         console.log("Intermediate")
+//         renderQuestions(2)
+//     } else {
+//         // display q's with game_id 3
+//         console.log("Expert")
+//         renderQuestions(3)
+//     }
+
+// }
+
+function renderQuestions(game_id) {
+    console.log(game_id)
+
+    
+}
+
+
 
