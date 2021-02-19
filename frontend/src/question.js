@@ -50,15 +50,31 @@ function renderQuestions(q) {
     <input type="radio" id="option_d" name="options" value="option_d"
     <label for="option_d">${q.option_d}</label>
     <br><br>
-    <button class="answer">Check your answer</button>
+    <button class="answer" id="answer">Check your answer</button>
     `
+    // let checkQA = document.querySelector(".answer")
+    // checkQA.addEventListener("click", console.log("works"))
 
 
-    // console.log("we are working")
+    // let answerDiv = document.createElement("div")
+    // answerDiv.className = "answerBtn"
+    // gameQContainer.append(answerDiv)
+
+    // let checkAnswer = document.querySelector(".answerBtn")
+    // checkAnswer.addEventListener("click", console.log("w"))
+
+    let checkAnswer = document.getElementById(".button")
+    checkAnswer.addEventListener("click", console.log("w")) 
+
     console.log(q)
     // debugger;
 
 }
+
+// let checkQA = document.querySelector(".answer")
+
+// checkQA.addEventListener("click", console.log("works"))
+
 
 
 

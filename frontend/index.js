@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchGames();
     createQuestionForm();
     // fetchQuestions();
+    // renderQuestions()
 })
 
 // let questionForm = document.getElementById("questions-form")

@@ -23,14 +23,7 @@ class Game{
     }
 
     renderDifficultyQs(event) {
-    // listen for target click
-    //if innerText === expert
-    //pull all expert q's
-
     // console.log(this.id)
-
-    
-    
 
     //call funct. to fetch q's
     // renderQuestions(this.id)
