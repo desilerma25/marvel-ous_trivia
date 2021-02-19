@@ -22,13 +22,11 @@ class Game{
         this.element.addEventListener("click", () => this.renderDifficultyQs())
     }
 
-    renderDifficultyQs(event) {
-    // console.log(this.id)
+    renderDifficultyQs() {
 
-    //call funct. to fetch q's
-    // renderQuestions(this.id)
+        let difficultyBtns = document.getElementById("games-container")
+        difficultyBtns.style.display = "none";
 
-    // need to fix this, talk to Jenn. Move to game or q class??
         fetch(`${BASE_URL}/games/${this.id}/questions`)
         .then(resp => resp.json())
         .then(questions => {

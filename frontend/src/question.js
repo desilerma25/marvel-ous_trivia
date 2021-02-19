@@ -45,14 +45,12 @@ class Question{
     </form>
     `
     gameQContainer.append(questionDiv)
-    // create btn w. doc.ele. then append btn
+    
     let answerBtn = document.createElement("button")
     answerBtn.className = "answer"
     answerBtn.setAttribute("id", "check-answer")
     answerBtn.innerHTML = `Check your answer`
-    // gameQContainer.append(answerBtn)
     questionDiv.append(answerBtn)
-    // add event listener to vari that rep btn
     answerBtn.addEventListener("click", () => this.checkForAnswer())
 
     console.log(this)
@@ -66,10 +64,10 @@ class Question{
         for (let i = 0, length = answerChoices.length; i < length; i++) {
             if (answerChoices[i].checked) {
                 selected = answerChoices[i].value
-                console.log(selected)
-                console.log(this.correct_answer)
+                console.log("user selection", selected)
+                console.log("correct", this.correct_answer)
                 if (selected === this.correct_answer) {
-                    console.log("Excelsior")
+                    console.log("Excelsior!")
                 }
                 else {
                     console.log("FALSE")
@@ -77,71 +75,6 @@ class Question{
             }
         }
     }
+
+    
 }
-
-// const difficultyLevelSelected = document.getElementById("games-container")
-
-
-function renderQuestions(q) {
-    let gameQContainer = document.getElementById("game-questions")
-
-    let questionDiv = document.createElement("div")
-    questionDiv.className = "trivia-qs"
-    questionDiv.innerHTML =     
-    `
-    <h2> ${q.content}</h2>
-    <form id="answer-opt">
-    <input type="radio" id="option_a" name="options" value="option_a">
-    <label for="option_a">${q.option_a}</label>
-
-    <input type="radio" id="option_b" name="options" value="option_b">
-    <label for="option_b">${q.option_b}</label>
-
-    <input type="radio" id="option_c" name="options" value="option_c">
-    <label for="option_c">${q.option_c}</label>
-
-    <input type="radio" id="option_d" name="options" value="option_d">
-    <label for="option_d">${q.option_d}</label>
-    <br><br>
-    </form>
-    `
-    gameQContainer.append(questionDiv)
-    // create btn w. doc.ele. then append btn
-    let answerBtn = document.createElement("button")
-    answerBtn.className = "answer"
-    answerBtn.setAttribute("id", "check-answer")
-    answerBtn.innerHTML = `Check your answer`
-    // gameQContainer.append(answerBtn)
-    questionDiv.append(answerBtn)
-    // add event listener to vari that rep btn
-    answerBtn.addEventListener("click", () => this.checkForAnswer())
-
-    console.log(q)
-}
-
-// function checkForAnswer () {
-
-//     const answerChoices = document.getElementById("answer-opt")
-
-//     // let difficulty // creates undef vari
-//     let selected
-
-
-
-//     for (let i = 0, length = answerChoices.length; i < length; i++) {
-//         if (answerChoices[i].checked) {
-//             selected = answerChoices[i].value
-//             console.log(selected)
-//             console.log(this.correct_answer)
-//             if (selected === this.correct_answer) {
-//                 console.log("Excelsior")
-//             }
-//             else {
-//                 console.log("FALSE")
-//             }
-//         }
-//     }
-// }
-
-
-
