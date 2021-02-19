@@ -1,7 +1,9 @@
 class Question{
+    // static all = []
 
-    constructor(game_id, content, correct_answer, option_a, option_b, option_c, option_d) {
+    constructor(game_id, game, content, correct_answer, option_a, option_b, option_c, option_d) {
         this.game_id = game_id
+        this.game = game
         this.content = content
         this.correct_answer = correct_answer
         this.option_a = option_a
@@ -9,6 +11,7 @@ class Question{
         this.option_c = option_c
         this.option_d = option_d
         this.questionDiv = document.createElement("div")
+        // Question.all.push(this)
     }
 
     // render popup saying q was saved and hide form
@@ -18,13 +21,18 @@ class Question{
 
         alert("Thank you for your question submission!")
         questionForm.style.display = "none";
-        
+
         addBtn.innerText = "Add a question!"
     }
 
 
     renderQuestions() {
         let gameQContainer = document.getElementById("game-questions")
+
+        // let questions = this.questionDiv
+        // // console.log(questions)
+        // let currentQ = questions
+        // console.log(currentQ)
         
         this.questionDiv.className = "trivia-qs"
         this.questionDiv.innerHTML =     
@@ -54,13 +62,13 @@ class Question{
         this.questionDiv.append(answerBtn)
         answerBtn.addEventListener("click", () => this.checkForAnswer())
 
-        console.log(this)
+        // console.log(this)
     }
 
     checkForAnswer () {
 
         let difficulty = document.getElementById("games-container")
-        difficulty.style.display = "block"; // mess with this later
+        // difficulty.style.display = "block"; // mess with this later
         // debugger
         // console.log(this)
 
@@ -75,11 +83,19 @@ class Question{
                 if (selected === this.correct_answer) {
                     // console.log("Excelsior!")
                     alert("That was correct. Excelsior!")
+                    console.log("correct, go to next")
+                    this.game.score++
+
                 }
                 else {
                     // console.log("FALSE")
                     alert("That was false you puny human.")
+                    console.log("FALSE, but still next")
+                    // Game.renderFirstQ();
                 }
+                // debugger
+                this.game.renderIndividualQ();
+                this.questionDiv.remove();
             }
         }
     }
