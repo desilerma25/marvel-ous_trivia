@@ -29,11 +29,28 @@ class Question{
 
 }
 
-const difficultyLevelSelected = document.getElementById("games-container")
+// const difficultyLevelSelected = document.getElementById("games-container")
 
 
 function renderQuestions(q) {
-    // let GameQContainer = document.getElementById("game-questions")
+    let gameQContainer = document.getElementById("game-questions")
+    gameQContainer.innerHTML +=
+    `
+    <h2> ${q.content}</h2>
+
+    <input type="radio" id="option_a" name="options" value="option_a"
+    <label for="option_a">${q.option_a}</label>
+
+    <input type="radio" id="option_b" name="options" value="option_b"
+    <label for="option_b">${q.option_b}</label>
+
+    <input type="radio" id="option_c" name="options" value="option_c"
+    <label for="option_c">${q.option_c}</label>
+
+    <input type="radio" id="option_d" name="options" value="option_d"
+    <label for="option_d">${q.option_d}</label>
+    `
+
 
     // console.log("we are working")
     console.log(q)

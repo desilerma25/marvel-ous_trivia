@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   # before_action :set_question, only: [:show, :update, :destroy]
   # added
-  before_action :set_game
+  before_action :set_game, only: [:index]
 
   # GET /questions
   def index
@@ -20,8 +20,8 @@ class QuestionsController < ApplicationController
   # POST /questions
   def create
     #added
-    @question = @game.questions.build(question_params)
-    # Question.new(question_params)
+    # @question = @game.questions.build(question_params)
+    @question = Question.new(question_params)
 
     if @question.save
       render json: @question, status: :created, location: @question
