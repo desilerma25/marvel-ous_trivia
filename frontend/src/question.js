@@ -8,6 +8,7 @@ class Question{
         this.option_b = option_b
         this.option_c = option_c
         this.option_d = option_d
+        this.questionDiv = document.createElement("div")
     }
 
     // render popup saying q was saved and hide form
@@ -24,9 +25,9 @@ class Question{
     renderQuestions() {
     let gameQContainer = document.getElementById("game-questions")
 
-    let questionDiv = document.createElement("div")
-    questionDiv.className = "trivia-qs"
-    questionDiv.innerHTML =     
+    
+    this.questionDiv.className = "trivia-qs"
+    this.questionDiv.innerHTML =     
     `
     <h2> ${this.content}</h2>
     <form id="answer-opt">
@@ -44,13 +45,13 @@ class Question{
     <br><br>
     </form>
     `
-    gameQContainer.append(questionDiv)
+    gameQContainer.append(this.questionDiv)
     
     let answerBtn = document.createElement("button")
     answerBtn.className = "answer"
     answerBtn.setAttribute("id", "check-answer")
     answerBtn.innerHTML = `Check your answer`
-    questionDiv.append(answerBtn)
+    this.questionDiv.append(answerBtn)
     answerBtn.addEventListener("click", () => this.checkForAnswer())
 
     console.log(this)
@@ -58,7 +59,12 @@ class Question{
 
     checkForAnswer () {
 
-        const answerChoices = document.getElementById("answer-opt")
+        let difficulty = document.getElementById("games-container")
+        difficulty.style.display = "block"; // mess with this later
+        // debugger
+        // console.log(this)
+
+        const answerChoices = this.questionDiv.querySelector("#answer-opt")
         let selected
     
         for (let i = 0, length = answerChoices.length; i < length; i++) {
