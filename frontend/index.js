@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     createQuestionForm();
     // fetchQuestions();
     // renderQuestions()
+    addQBtnForm()
 })
 
 // let questionForm = document.getElementById("questions-form")
@@ -62,6 +63,26 @@ function createQuestionForm() {
 
 }
 
+function addQBtnForm() {
+
+    const addBtn = document.querySelector("#new-q-btn");
+    const qForm = document.querySelector("#questions-form")
+    // qForm.addEventListener('submit', questionFormSubmit())
+    let addQ = false;
+    qForm.style.display = "none";
+    addBtn.addEventListener("click", () => {
+        addQ = !addQ;
+        if (addQ) {
+            qForm.style.display = "block";
+            addBtn.innerText = "Abort Mission!"
+        } else {
+            qForm.style.display = "none";
+            addBtn.innerText = "Add a question!"
+        }
+    })
+
+}
+
 function questionFormSubmit(event) {
     event.preventDefault()
     let newContent = document.getElementById("content").value
@@ -106,6 +127,7 @@ function questionFormSubmit(event) {
     .then(question => {
         let q = new Question(question.id, question.content, question.correct_answer, question.game_id, question.option_a, question.option_b, question.option_c, question.option_d)
         q.renderQSubmissionsPopUp();
+        // q.style.display = "none";
     })
 }
 
