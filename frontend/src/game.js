@@ -9,7 +9,7 @@ class Game{
     renderGame() {
         let gamesDiv = document.getElementById("games-container")
 
-        console.log(this.difficulty)
+        // console.log(this.difficulty)
 
         this.element.innerHTML +=
         `

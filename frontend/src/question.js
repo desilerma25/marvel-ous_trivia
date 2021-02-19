@@ -49,6 +49,8 @@ function renderQuestions(q) {
 
     <input type="radio" id="option_d" name="options" value="option_d"
     <label for="option_d">${q.option_d}</label>
+    <br><br>
+    <button class="answer">Check your answer</button>
     `
 
 

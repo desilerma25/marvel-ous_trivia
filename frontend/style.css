@@ -73,3 +73,8 @@ button:hover {
     padding-bottom: 5px;
 }
 
+.answer {
+    font-size: 75%;
+    width: 20%;
+}
+
