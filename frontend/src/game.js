@@ -24,11 +24,24 @@ class Game{
     // listen for target click
     //if innerText === expert
     //pull all expert q's
-    // console.log(this)
+
+    // console.log(this.id)
+
+    
     
 
     //call funct. to fetch q's
-    renderQuestions(this.id)
+    // renderQuestions(this.id)
 
-}
+        fetch(`${BASE_URL}/games/${this.id}/questions`)
+        .then(resp => resp.json())
+        .then(questions => {
+            for (const question of questions) {
+                // console.log("rails obj", question)
+                let q = new Question(question.game_id, question.content, question.correct_answer, question.option_a, question.option_b, question.option_c, question.option_d)
+                // console.log("js object", q)
+                renderQuestions(q);
+            }
+        })
+    }
 }

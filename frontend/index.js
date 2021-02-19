@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchGames();
     createQuestionForm();
+    // fetchQuestions();
 })
 
 // let questionForm = document.getElementById("questions-form")
@@ -22,7 +23,6 @@ function fetchGames() {
         }
     })
 }
-
 
 // need a create (fetch POST questions)
 
@@ -107,6 +107,10 @@ function questionFormSubmit(event) {
         q.renderQSubmissionsPopUp();
     })
 }
+
+
+
+
 
 
 

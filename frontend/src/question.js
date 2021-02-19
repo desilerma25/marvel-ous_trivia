@@ -18,41 +18,27 @@ class Question{
         questionForm.style.display = "none";
         //render quiz?
     }
+
+    // renderQuestions() {
+        //gets uncaught ref error here
+    //     console.log("we are working")
+    //     debugger;
+    
+    // }
+    
+
 }
 
 const difficultyLevelSelected = document.getElementById("games-container")
 
-// either forEach
-// or put event listener on games-container, if/else 
 
-// difficultyLevelSelected.addEventListener("click", renderDifficultyQs)
+function renderQuestions(q) {
+    // let GameQContainer = document.getElementById("game-questions")
 
-// function renderDifficultyQs(event) {
-//     // listen for target click
-//     //if innerText === expert
-//     //pull all expert q's
-//     if (event.target.innerText === "Beginner") {
-//         debugger;
-//         // console.log("Beginner")
-//         // display q's with game_id 1
-//         renderQuestions(1)
+    // console.log("we are working")
+    console.log(q)
+    // debugger;
 
-//     } else if (event.target.innerText === "Intermediate") {
-//         // display q's with game_id 2
-//         console.log("Intermediate")
-//         renderQuestions(2)
-//     } else {
-//         // display q's with game_id 3
-//         console.log("Expert")
-//         renderQuestions(3)
-//     }
-
-// }
-
-function renderQuestions(game_id) {
-    console.log(game_id)
-
-    
 }
 
 
