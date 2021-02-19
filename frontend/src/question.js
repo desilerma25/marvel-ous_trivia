@@ -63,8 +63,8 @@ function renderQuestions(q) {
     // let checkAnswer = document.querySelector(".answerBtn")
     // checkAnswer.addEventListener("click", console.log("w"))
 
-    let checkAnswer = document.getElementById(".button")
-    checkAnswer.addEventListener("click", console.log("w")) 
+    // let checkAnswer = document.getElementById(".button")
+    // checkAnswer.addEventListener("click", console.log("w")) 
 
     console.log(q)
     // debugger;
