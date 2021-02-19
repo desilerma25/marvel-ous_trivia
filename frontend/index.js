@@ -2,12 +2,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchGames();
     createQuestionForm();
-    // fetchQuestions();
-    // renderQuestions()
-    addQBtnForm()
+    addQBtnForm();
 })
-
-// let questionForm = document.getElementById("questions-form")
 
 const BASE_URL = "http://127.0.0.1:3000"
 
@@ -25,13 +21,6 @@ function fetchGames() {
         }
     })
 }
-
-// need a create (fetch POST questions)
-
-// create a form
-// add event listener
-// once form submitted => fetch post to backend
-// do something with the returned obj
 
 function createQuestionForm() {
     let questionForm = document.getElementById("questions-form")
@@ -97,9 +86,7 @@ function questionFormSubmit(event) {
 
     for (var i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
-            // do whatever you want with the checked radio
-            // console.log("in the loop", radios[i].value);
-            // undef vari. gets its value here
+
             difficulty = radios[i].value
         }
     }

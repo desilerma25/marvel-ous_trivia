@@ -14,48 +14,48 @@ class Question{
     // render popup saying q was saved and hide form
     renderQSubmissionsPopUp() {
         let questionForm = document.getElementById("questions-form")
+        const addBtn = document.querySelector("#new-q-btn");
+
         alert("Thank you for your question submission!")
-        // may need to come back to this? Do I want it gone after q is submitted?
         questionForm.style.display = "none";
-        // figure out a  way to toggle form hidden/unhidden
         
+        addBtn.innerText = "Add a question!"
     }
 
 
     renderQuestions() {
-    let gameQContainer = document.getElementById("game-questions")
+        let gameQContainer = document.getElementById("game-questions")
+        
+        this.questionDiv.className = "trivia-qs"
+        this.questionDiv.innerHTML =     
+        `
+        <h2> ${this.content}</h2>
+        <form id="answer-opt">
+        <input type="radio" id="option_a" name="options" value="${this.option_a}">
+        <label for="option_a">${this.option_a}</label>
 
-    
-    this.questionDiv.className = "trivia-qs"
-    this.questionDiv.innerHTML =     
-    `
-    <h2> ${this.content}</h2>
-    <form id="answer-opt">
-    <input type="radio" id="option_a" name="options" value="${this.option_a}">
-    <label for="option_a">${this.option_a}</label>
+        <input type="radio" id="option_b" name="options" value="${this.option_b}">
+        <label for="option_b">${this.option_b}</label>
 
-    <input type="radio" id="option_b" name="options" value="${this.option_b}">
-    <label for="option_b">${this.option_b}</label>
+        <input type="radio" id="option_c" name="options" value="${this.option_c}">
+        <label for="option_c">${this.option_c}</label>
 
-    <input type="radio" id="option_c" name="options" value="${this.option_c}">
-    <label for="option_c">${this.option_c}</label>
+        <input type="radio" id="option_d" name="options" value="${this.option_d}">
+        <label for="option_d">${this.option_d}</label>
+        <br>
+        </form>
+        `
+        gameQContainer.append(this.questionDiv)
+        
+        let answerBtn = document.createElement("button")
+        answerBtn.className = "answer"
+        answerBtn.setAttribute("id", "check-answer")
+        answerBtn.innerHTML = `Check your answer`
+        this.questionDiv.append(answerBtn)
+        answerBtn.addEventListener("click", () => this.checkForAnswer())
 
-    <input type="radio" id="option_d" name="options" value="${this.option_d}">
-    <label for="option_d">${this.option_d}</label>
-    <br><br>
-    </form>
-    `
-    gameQContainer.append(this.questionDiv)
-    
-    let answerBtn = document.createElement("button")
-    answerBtn.className = "answer"
-    answerBtn.setAttribute("id", "check-answer")
-    answerBtn.innerHTML = `Check your answer`
-    this.questionDiv.append(answerBtn)
-    answerBtn.addEventListener("click", () => this.checkForAnswer())
-
-    console.log(this)
-}
+        console.log(this)
+    }
 
     checkForAnswer () {
 
@@ -73,10 +73,12 @@ class Question{
                 console.log("user selection", selected)
                 console.log("correct", this.correct_answer)
                 if (selected === this.correct_answer) {
-                    console.log("Excelsior!")
+                    // console.log("Excelsior!")
+                    alert("That was correct. Excelsior!")
                 }
                 else {
-                    console.log("FALSE")
+                    // console.log("FALSE")
+                    alert("That was false you puny human.")
                 }
             }
         }

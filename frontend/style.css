@@ -67,10 +67,11 @@ button:hover {
 #game-questions {
     text-align: center;
     border-color: black;
-    border: 100px;
+    border: 0px;
     background-color: rgba(254, 254, 254, 0.414);
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding-top: 0px;
+    /* padding-bottom: 5px; */
+    /* margin-bottom: 5px; */
 }
 
 .answer {
