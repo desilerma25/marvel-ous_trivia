@@ -36,7 +36,7 @@ class Game{
                 // console.log("rails obj", question)
                 let q = new Question(question.game_id, question.content, question.correct_answer, question.option_a, question.option_b, question.option_c, question.option_d)
                 // console.log("js object", q)
-                renderQuestions(q);
+                q.renderQuestions();
             }
         })
     }

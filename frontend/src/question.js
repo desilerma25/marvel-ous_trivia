@@ -16,17 +16,67 @@ class Question{
         alert("Thank you for your question submission!")
         // may need to come back to this? Do I want it gone after q is submitted?
         questionForm.style.display = "none";
-        //render quiz?
+        // figure out a  way to toggle form hidden/unhidden
+        
     }
 
-    // renderQuestions() {
-        //gets uncaught ref error here
-    //     console.log("we are working")
-    //     debugger;
-    
-    // }
-    
 
+    renderQuestions() {
+    let gameQContainer = document.getElementById("game-questions")
+
+    let questionDiv = document.createElement("div")
+    questionDiv.className = "trivia-qs"
+    questionDiv.innerHTML =     
+    `
+    <h2> ${this.content}</h2>
+    <form id="answer-opt">
+    <input type="radio" id="option_a" name="options" value="${this.option_a}">
+    <label for="option_a">${this.option_a}</label>
+
+    <input type="radio" id="option_b" name="options" value="${this.option_b}">
+    <label for="option_b">${this.option_b}</label>
+
+    <input type="radio" id="option_c" name="options" value="${this.option_c}">
+    <label for="option_c">${this.option_c}</label>
+
+    <input type="radio" id="option_d" name="options" value="${this.option_d}">
+    <label for="option_d">${this.option_d}</label>
+    <br><br>
+    </form>
+    `
+    gameQContainer.append(questionDiv)
+    // create btn w. doc.ele. then append btn
+    let answerBtn = document.createElement("button")
+    answerBtn.className = "answer"
+    answerBtn.setAttribute("id", "check-answer")
+    answerBtn.innerHTML = `Check your answer`
+    // gameQContainer.append(answerBtn)
+    questionDiv.append(answerBtn)
+    // add event listener to vari that rep btn
+    answerBtn.addEventListener("click", () => this.checkForAnswer())
+
+    console.log(this)
+}
+
+    checkForAnswer () {
+
+        const answerChoices = document.getElementById("answer-opt")
+        let selected
+    
+        for (let i = 0, length = answerChoices.length; i < length; i++) {
+            if (answerChoices[i].checked) {
+                selected = answerChoices[i].value
+                console.log(selected)
+                console.log(this.correct_answer)
+                if (selected === this.correct_answer) {
+                    console.log("Excelsior")
+                }
+                else {
+                    console.log("FALSE")
+                }
+            }
+        }
+    }
 }
 
 // const difficultyLevelSelected = document.getElementById("games-container")
@@ -34,47 +84,64 @@ class Question{
 
 function renderQuestions(q) {
     let gameQContainer = document.getElementById("game-questions")
-    gameQContainer.innerHTML +=
+
+    let questionDiv = document.createElement("div")
+    questionDiv.className = "trivia-qs"
+    questionDiv.innerHTML =     
     `
     <h2> ${q.content}</h2>
-
-    <input type="radio" id="option_a" name="options" value="option_a"
+    <form id="answer-opt">
+    <input type="radio" id="option_a" name="options" value="option_a">
     <label for="option_a">${q.option_a}</label>
 
-    <input type="radio" id="option_b" name="options" value="option_b"
+    <input type="radio" id="option_b" name="options" value="option_b">
     <label for="option_b">${q.option_b}</label>
 
-    <input type="radio" id="option_c" name="options" value="option_c"
+    <input type="radio" id="option_c" name="options" value="option_c">
     <label for="option_c">${q.option_c}</label>
 
-    <input type="radio" id="option_d" name="options" value="option_d"
+    <input type="radio" id="option_d" name="options" value="option_d">
     <label for="option_d">${q.option_d}</label>
     <br><br>
-    <button class="answer" id="answer">Check your answer</button>
+    </form>
     `
-    // let checkQA = document.querySelector(".answer")
-    // checkQA.addEventListener("click", console.log("works"))
-
-
-    // let answerDiv = document.createElement("div")
-    // answerDiv.className = "answerBtn"
-    // gameQContainer.append(answerDiv)
-
-    // let checkAnswer = document.querySelector(".answerBtn")
-    // checkAnswer.addEventListener("click", console.log("w"))
-
-    // let checkAnswer = document.getElementById(".button")
-    // checkAnswer.addEventListener("click", console.log("w")) 
+    gameQContainer.append(questionDiv)
+    // create btn w. doc.ele. then append btn
+    let answerBtn = document.createElement("button")
+    answerBtn.className = "answer"
+    answerBtn.setAttribute("id", "check-answer")
+    answerBtn.innerHTML = `Check your answer`
+    // gameQContainer.append(answerBtn)
+    questionDiv.append(answerBtn)
+    // add event listener to vari that rep btn
+    answerBtn.addEventListener("click", () => this.checkForAnswer())
 
     console.log(q)
-    // debugger;
-
 }
 
-// let checkQA = document.querySelector(".answer")
+// function checkForAnswer () {
 
-// checkQA.addEventListener("click", console.log("works"))
+//     const answerChoices = document.getElementById("answer-opt")
 
+//     // let difficulty // creates undef vari
+//     let selected
+
+
+
+//     for (let i = 0, length = answerChoices.length; i < length; i++) {
+//         if (answerChoices[i].checked) {
+//             selected = answerChoices[i].value
+//             console.log(selected)
+//             console.log(this.correct_answer)
+//             if (selected === this.correct_answer) {
+//                 console.log("Excelsior")
+//             }
+//             else {
+//                 console.log("FALSE")
+//             }
+//         }
+//     }
+// }
 
 
 
