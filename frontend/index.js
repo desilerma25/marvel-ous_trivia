@@ -4,14 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     createQuestionForm();
     addQBtnForm();
     start();
-    // renderGameMenu()
-    // renderPlayAgain();
 })
 
 const BASE_URL = "http://127.0.0.1:3000"
-
-// let hidePlayAgain = document.getElementById("play-again")
-// hidePlayAgain.style.display = "none";
 
 //need a read (fetch games index)
 function fetchGames() {
@@ -20,9 +15,7 @@ function fetchGames() {
     .then(games => {
         // we do something w data we fetched
         for (const game of games) {
-            //console.log("rails obj", game)
             let g = new Game(game.id, game.difficulty)
-            //console.log("js object", g)
             g.renderGame();
         }
     })
@@ -62,7 +55,7 @@ function addQBtnForm() {
 
     const addBtn = document.querySelector("#new-q-btn");
     const qForm = document.querySelector("#questions-form")
-    // qForm.addEventListener('submit', questionFormSubmit())
+    
     let addQ = false;
     qForm.style.display = "none";
     addBtn.addEventListener("click", () => {
@@ -88,7 +81,7 @@ function questionFormSubmit(event) {
     let newOptD = document.getElementById("option_d").value
 
     const radios = document.getElementsByName('difficulty');
-    let difficulty // creates undef vari
+    let difficulty
 
     for (var i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
@@ -96,7 +89,6 @@ function questionFormSubmit(event) {
             difficulty = radios[i].value
         }
     }
-    // console.log(newContent, newCorrect, newOptA, newOptB, newOptC, newOptD, difficulty)
     // bundle info to make fetch post req to backend and persist to db
     let question = {
         content: newContent,
@@ -120,7 +112,6 @@ function questionFormSubmit(event) {
     .then(question => {
         let q = new Question(question.id, question.content, question.correct_answer, question.game_id, question.option_a, question.option_b, question.option_c, question.option_d)
         q.renderQSubmissionsPopUp();
-        // q.style.display = "none";
     })
 }
 
@@ -141,7 +132,6 @@ function start() {
 
 function renderGameMenu() {
 
-    // fetchGames();
     let startBtn = document.getElementById("start-game")
     startBtn.style.display = "none"
     let gameDiv = document.getElementById("games-container")
@@ -153,13 +143,9 @@ function renderGameMenu() {
 
     let audio = document.getElementById("audio")
     audio.play();
-
-
-    // addQBtnForm();
 }
 
 function renderPlayAgainBtn() {
-    // console.log("the did it")
 
     let gameDiv = document.getElementById("games-container")
     gameDiv.style.display = "none"
@@ -167,29 +153,21 @@ function renderPlayAgainBtn() {
     playAgainDiv.style.display = "block";
 
     let playAgainBtn = document.getElementById("play-again-btn")
-    playAgainBtn.addEventListener("button", renderPlayAgain)
-
-    //create button 
-    //when pressed render difficulty
+    playAgainBtn.addEventListener("click", renderPlayAgain)
 }
 
-
-
 function renderPlayAgain() {
-    console.log("we made it")
-    //remove play again btn
-    // display diff btns
-    // pause audio
     let playAgainDiv = document.getElementById("play-again")
     let gameDiv = document.getElementById("games-container")
     playAgainDiv.style.display = "none"
     gameDiv.style.display = "block"
-    
+
     let notWorthy = document.getElementById("not_worthy")
     let excelsior = document.getElementById("excelsior")
     excelsior.pause();
     notWorthy.pause();
 }
+
 
 
 

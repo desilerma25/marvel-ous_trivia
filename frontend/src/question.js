@@ -1,5 +1,4 @@
 class Question{
-    // static all = []
 
     constructor(game_id, game, content, correct_answer, option_a, option_b, option_c, option_d) {
         this.game_id = game_id
@@ -11,7 +10,6 @@ class Question{
         this.option_c = option_c
         this.option_d = option_d
         this.questionDiv = document.createElement("div")
-        // Question.all.push(this)
     }
 
     // render popup saying q was saved and hide form
@@ -59,8 +57,6 @@ class Question{
         answerBtn.innerHTML = `Check your answer`
         this.questionDiv.append(answerBtn)
         answerBtn.addEventListener("click", () => this.checkForAnswer())
-
-        // console.log(this)
     }
 
     checkForAnswer () {
@@ -74,15 +70,11 @@ class Question{
                 console.log("user selection", selected)
                 console.log("correct", this.correct_answer)
                 if (selected === this.correct_answer) {
-                    // console.log("Excelsior!")
-                    // let audio = document.getElementById("audio")
-                    // audio.play();
                     alert("That was correct. Excelsior!")
                     console.log("correct, go to next")
                     this.game.score++
                 }
                 else {
-                    // console.log("FALSE")
                     alert("That was false you puny human.")
                     console.log("FALSE, but still next")
                 }
@@ -91,36 +83,4 @@ class Question{
             }
         }
     }
-
-    
-}
-
-function renderPlayAgainBtn() {
-    // console.log("the did it")
-
-    let gameDiv = document.getElementById("games-container")
-    gameDiv.style.display = "none"
-    let playAgainDiv = document.getElementById("play-again")
-    playAgainDiv.style.display = "block";
-
-    let playAgainBtn = document.getElementById("play-again-btn")
-    // playAgainBtn.innerText = 
-    playAgainBtn.addEventListener("click", renderPlayAgain)
-
-    //create button 
-    //when pressed render difficulty
-}
-
-function renderPlayAgain() {
-    console.log("we made it")
-
-    let playAgainDiv = document.getElementById("play-again")
-    let gameDiv = document.getElementById("games-container")
-    playAgainDiv.style.display = "none"
-    gameDiv.style.display = "block"
-
-    let notWorthy = document.getElementById("not_worthy")
-    let excelsior = document.getElementById("excelsior")
-    excelsior.pause();
-    notWorthy.pause();
 }
