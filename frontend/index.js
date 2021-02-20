@@ -5,9 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     addQBtnForm();
     start();
     // renderGameMenu()
+    // renderPlayAgain();
 })
 
 const BASE_URL = "http://127.0.0.1:3000"
+
+// let hidePlayAgain = document.getElementById("play-again")
+// hidePlayAgain.style.display = "none";
 
 //need a read (fetch games index)
 function fetchGames() {
@@ -125,6 +129,8 @@ function start() {
     
     let gameDiv = document.getElementById("games-container")
     let questionDiv = document.getElementById("new-q-btn")
+    let playAgainDiv = document.getElementById("play-again")
+    playAgainDiv.style.display = "none"
     gameDiv.style.display = "none"
     questionDiv.style.display = "none"
 
@@ -140,6 +146,8 @@ function renderGameMenu() {
     startBtn.style.display = "none"
     let gameDiv = document.getElementById("games-container")
     let questionDiv = document.getElementById("new-q-btn")
+    let playAgainDiv = document.getElementById("play-again")
+    playAgainDiv.style.display = "none"
     gameDiv.style.display = "block"
     questionDiv.style.display = "block"
 
@@ -148,6 +156,39 @@ function renderGameMenu() {
 
 
     // addQBtnForm();
+}
+
+function renderPlayAgainBtn() {
+    // console.log("the did it")
+
+    let gameDiv = document.getElementById("games-container")
+    gameDiv.style.display = "none"
+    let playAgainDiv = document.getElementById("play-again")
+    playAgainDiv.style.display = "block";
+
+    let playAgainBtn = document.getElementById("play-again-btn")
+    playAgainBtn.addEventListener("button", renderPlayAgain)
+
+    //create button 
+    //when pressed render difficulty
+}
+
+
+
+function renderPlayAgain() {
+    console.log("we made it")
+    //remove play again btn
+    // display diff btns
+    // pause audio
+    let playAgainDiv = document.getElementById("play-again")
+    let gameDiv = document.getElementById("games-container")
+    playAgainDiv.style.display = "none"
+    gameDiv.style.display = "block"
+    
+    let notWorthy = document.getElementById("not_worthy")
+    let excelsior = document.getElementById("excelsior")
+    excelsior.pause();
+    notWorthy.pause();
 }
 
 

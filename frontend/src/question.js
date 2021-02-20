@@ -94,3 +94,33 @@ class Question{
 
     
 }
+
+function renderPlayAgainBtn() {
+    // console.log("the did it")
+
+    let gameDiv = document.getElementById("games-container")
+    gameDiv.style.display = "none"
+    let playAgainDiv = document.getElementById("play-again")
+    playAgainDiv.style.display = "block";
+
+    let playAgainBtn = document.getElementById("play-again-btn")
+    // playAgainBtn.innerText = 
+    playAgainBtn.addEventListener("click", renderPlayAgain)
+
+    //create button 
+    //when pressed render difficulty
+}
+
+function renderPlayAgain() {
+    console.log("we made it")
+
+    let playAgainDiv = document.getElementById("play-again")
+    let gameDiv = document.getElementById("games-container")
+    playAgainDiv.style.display = "none"
+    gameDiv.style.display = "block"
+
+    let notWorthy = document.getElementById("not_worthy")
+    let excelsior = document.getElementById("excelsior")
+    excelsior.pause();
+    notWorthy.pause();
+}
