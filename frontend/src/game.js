@@ -28,8 +28,10 @@ class Game{
 
     renderDifficultyQs() {
 
-        // let audio = document.getElementById("audio")
-        // audio.pause();
+        let audio = document.getElementById("audio")
+        audio.pause();
+        let notWorthy = document.getElementById("not_worthy")
+        notWorthy.pause();
 
         let difficultyButtons = document.getElementById("games-container")
         difficultyButtons.style.display = "none";
@@ -61,11 +63,34 @@ class Game{
             q.renderQuestions();
             this.currentQ++
         } else {
-            alert("you got " + this.score + " correct out of " + this.questions["length"])
+            // alert("you got " + this.score + " correct out of " + this.questions["length"])
+            // let difficultyButtons = document.getElementById("games-container")
+            // difficultyButtons.style.display = "block";
+            let averageScore = Math.floor((this.score / this.questions["length"]) * 100)
+            console.log(averageScore)
+            if (averageScore < 70 ) {
+                let notWorthy = document.getElementById("not_worthy")
+                notWorthy.play();
+                sleep(100)
+                alert("You are not worthy! You got " + averageScore + "% right.")
+            } else {
+                let excelsior = document.getElementById("excelsior")
+                excelsior.play();
+                alert("Stan would be proud! You got " + averageScore + "% right.") 
+            }
             let difficultyButtons = document.getElementById("games-container")
             difficultyButtons.style.display = "block";
+            // let gameDiv = document.getElementById("game-questions")
+            // gameDiv.style.display = "none";
         }
     }
+}
 
+function sleep(duration) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve()
+        }, duration * 1000)
+    })
 }
 

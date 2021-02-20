@@ -19,6 +19,9 @@ class Question{
         let questionForm = document.getElementById("questions-form")
         const addBtn = document.querySelector("#new-q-btn");
 
+        let notWorthy = document.getElementById("not_worthy")
+        notWorthy.pause();
+
         alert("Thank you for your question submission!")
         questionForm.style.display = "none";
 
