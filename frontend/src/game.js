@@ -28,8 +28,8 @@ class Game{
 
     renderDifficultyQs() {
 
-        let difficultyBtns = document.getElementById("games-container")
-        difficultyBtns.style.display = "none";
+        let difficultyButtons = document.getElementById("games-container")
+        difficultyButtons.style.display = "none";
 
         fetch(`${BASE_URL}/games/${this.id}/questions`)
         .then(resp => resp.json())
@@ -38,30 +38,64 @@ class Game{
                 // console.log("rails obj", question)
                 let q = new Question(question.game_id, this, question.content, question.correct_answer, question.option_a, question.option_b, question.option_c, question.option_d)
                 // console.log("js object", q)
-                
+
                 this.questions.push(q); 
                 // q.renderQuestions();
-                
             }
             this.renderIndividualQ();
         })
     }
     renderIndividualQ() {
-        //render one at a time
-        // access this.q
-
         let q = this.questions[this.currentQ]
-        q.renderQuestions();
-        // increase count by 1
-        this.currentQ++
-        // current.renderQuestions();
-        // renderIndividualQ();
-        // trigger again
-        // add next btn, calls funct again
-        // or when check ans. trigger
+        // q.renderQuestions();
+        // this.currentQ++
 
+        console.log("currentQ", this.currentQ)
+        console.log("q", q)
+        console.log("this q", this.questions)
+
+        if (this.currentQ < this.questions["length"]) {
+            q.renderQuestions();
+            this.currentQ++
+        } else {
+            alert("you done")
+            let difficultyButtons = document.getElementById("games-container")
+            difficultyButtons.style.display = "block";
+        }
+
+        // console.log(this.questions)
+        // debugger
+
+        // if (this.questions[-1]) {
+
+        // }
+        // console.log()
+
+    
+
+        // for (let i = 0, length = this.questions["length"]; i < length; i++) {
+        //     let q = this.questions[this.currentQ]
+        //     q.renderQuestions();
+        //     if (this.currentQ <= length) {
+        //     this.currentQ++
+        //     } else {
+        //         alert("you are finished")
+        //     }
+        // }
 
         // check if last, dont render, alert score
     }
 
 }
+
+
+
+// for (let i = 0, length = this.questions.length; i < length; i++) {
+//     if (this.currentQ[i] <= length) {
+//     let q = this.questions[this.currentQ]
+//     q.renderQuestions();
+//     this.currentQ++
+//     } else {
+//         alert("you are finished")
+//     }
+// }
