@@ -58,7 +58,7 @@ class Game{
             q.renderQuestions();
             this.currentQ++
         } else {
-            alert("you done")
+            alert("you got " + this.score + " correct out of " + this.questions["length"])
             let difficultyButtons = document.getElementById("games-container")
             difficultyButtons.style.display = "block";
         }
