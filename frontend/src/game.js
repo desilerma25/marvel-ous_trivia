@@ -28,6 +28,9 @@ class Game{
 
     renderDifficultyQs() {
 
+        // let audio = document.getElementById("audio")
+        // audio.pause();
+
         let difficultyButtons = document.getElementById("games-container")
         difficultyButtons.style.display = "none";
 
@@ -62,40 +65,7 @@ class Game{
             let difficultyButtons = document.getElementById("games-container")
             difficultyButtons.style.display = "block";
         }
-
-        // console.log(this.questions)
-        // debugger
-
-        // if (this.questions[-1]) {
-
-        // }
-        // console.log()
-
-    
-
-        // for (let i = 0, length = this.questions["length"]; i < length; i++) {
-        //     let q = this.questions[this.currentQ]
-        //     q.renderQuestions();
-        //     if (this.currentQ <= length) {
-        //     this.currentQ++
-        //     } else {
-        //         alert("you are finished")
-        //     }
-        // }
-
-        // check if last, dont render, alert score
     }
 
 }
 
-
-
-// for (let i = 0, length = this.questions.length; i < length; i++) {
-//     if (this.currentQ[i] <= length) {
-//     let q = this.questions[this.currentQ]
-//     q.renderQuestions();
-//     this.currentQ++
-//     } else {
-//         alert("you are finished")
-//     }
-// }

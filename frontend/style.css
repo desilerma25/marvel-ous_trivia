@@ -60,8 +60,45 @@ button:hover {
     background-color: rgb(186, 30, 35);
 }
 
+#start {
+    background-color: rgb(0, 0, 0);
+    font-family: "Earth's Mightiest";
+    font-size: 200%;
+    color: rgb(240, 240, 240);
+    width: 33%;
+}
+
+#new-q-btn {
+    background-color: rgb(0, 0, 0);
+    font-family: "Earth's Mightiest";
+    font-size: 35px;
+    color: rgb(240, 240, 240);
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto; 
+}
+
+#new-q-btn {
+    background-color: rgb(186, 30, 35);
+    font-family: "Earth's Mightiest";
+    font-size: 35px;
+    color: rgb(240, 240, 240);
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    /* left: 50px; */
+}
+
 #games-container {
     text-align: center;
+}
+
+#startGame {
+    text-align: center;
+    size: 100px;
 }
 
 #game-questions {

@@ -28,11 +28,6 @@ class Question{
 
     renderQuestions() {
         let gameQContainer = document.getElementById("game-questions")
-
-        // let questions = this.questionDiv
-        // // console.log(questions)
-        // let currentQ = questions
-        // console.log(currentQ)
         
         this.questionDiv.className = "trivia-qs"
         this.questionDiv.innerHTML =     
@@ -67,11 +62,6 @@ class Question{
 
     checkForAnswer () {
 
-        let difficulty = document.getElementById("games-container")
-        // difficulty.style.display = "block"; // mess with this later
-        // debugger
-        // console.log(this)
-
         const answerChoices = this.questionDiv.querySelector("#answer-opt")
         let selected
     
@@ -82,18 +72,17 @@ class Question{
                 console.log("correct", this.correct_answer)
                 if (selected === this.correct_answer) {
                     // console.log("Excelsior!")
+                    // let audio = document.getElementById("audio")
+                    // audio.play();
                     alert("That was correct. Excelsior!")
                     console.log("correct, go to next")
                     this.game.score++
-
                 }
                 else {
                     // console.log("FALSE")
                     alert("That was false you puny human.")
                     console.log("FALSE, but still next")
-                    // Game.renderFirstQ();
                 }
-                // debugger
                 this.game.renderIndividualQ();
                 this.questionDiv.remove();
             }

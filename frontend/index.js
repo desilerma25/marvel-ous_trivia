@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchGames();
     createQuestionForm();
     addQBtnForm();
+    start();
+    // renderGameMenu()
 })
 
 const BASE_URL = "http://127.0.0.1:3000"
@@ -116,6 +118,36 @@ function questionFormSubmit(event) {
         q.renderQSubmissionsPopUp();
         // q.style.display = "none";
     })
+}
+
+
+function start() {
+    
+    let gameDiv = document.getElementById("games-container")
+    let questionDiv = document.getElementById("new-q-btn")
+    gameDiv.style.display = "none"
+    questionDiv.style.display = "none"
+
+    let startGame = document.getElementById("start-game")
+    startGame.addEventListener("click", renderGameMenu)
+}
+
+
+function renderGameMenu() {
+
+    // fetchGames();
+    let startBtn = document.getElementById("start-game")
+    startBtn.style.display = "none"
+    let gameDiv = document.getElementById("games-container")
+    let questionDiv = document.getElementById("new-q-btn")
+    gameDiv.style.display = "block"
+    questionDiv.style.display = "block"
+
+    let audio = document.getElementById("audio")
+    audio.play();
+
+
+    // addQBtnForm();
 }
 
 
