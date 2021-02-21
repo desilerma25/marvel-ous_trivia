@@ -71,12 +71,12 @@ class Question{
                 console.log("correct", this.correct_answer)
                 if (selected === this.correct_answer) {
                     alert("That was correct. Excelsior!")
-                    console.log("correct, go to next")
+                    // console.log("correct, go to next")
                     this.game.score++
                 }
                 else {
                     alert("That was false you puny human.")
-                    console.log("FALSE, but still next")
+                    // console.log("FALSE, but still next")
                 }
                 this.game.renderIndividualQ();
                 this.questionDiv.remove();

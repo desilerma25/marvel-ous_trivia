@@ -57,7 +57,7 @@ class Game{
             if (averageScore < 70 ) {
                 let notWorthy = document.getElementById("not_worthy")
                 notWorthy.play();
-                alert("You are not worthy! You got " + averageScore + "% right.")
+                setTimeout(() => alert("You are not worthy! You got " + averageScore + "% right."), 1000)
             } else {
                 let excelsior = document.getElementById("excelsior")
                 excelsior.play();
