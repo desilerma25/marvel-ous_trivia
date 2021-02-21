@@ -67,8 +67,8 @@ class Question{
         for (let i = 0, length = answerChoices.length; i < length; i++) {
             if (answerChoices[i].checked) {
                 selected = answerChoices[i].value
-                console.log("user selection", selected)
-                console.log("correct", this.correct_answer)
+                // console.log("user selection", selected)
+                // console.log("correct", this.correct_answer)
                 if (selected === this.correct_answer) {
                     alert("That was correct. Excelsior!")
                     // console.log("correct, go to next")

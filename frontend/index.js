@@ -157,6 +157,9 @@ function renderPlayAgainBtn() {
 }
 
 function renderPlayAgain() {
+
+    // Game.questions = []
+    // console.log(Game.questions)
     let playAgainDiv = document.getElementById("play-again")
     let gameDiv = document.getElementById("games-container")
     playAgainDiv.style.display = "none"
@@ -165,15 +168,7 @@ function renderPlayAgain() {
     let notWorthy = document.getElementById("not_worthy")
     let excelsior = document.getElementById("excelsior")
     excelsior.pause();
+    excelsior.currentTime = 0;
     notWorthy.pause();
+    notWorthy.currentTime = 0;
 }
-
-
-
-
-
-
-
-
-
-
