@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
     if @question.save
       render json: @question, status: :created, location: @question
     else
-      render json: @question.errors, status: :unprocessable_entity
+      render json: @question.errors.full_messages, status: :unprocessable_entity
     end
   end
 

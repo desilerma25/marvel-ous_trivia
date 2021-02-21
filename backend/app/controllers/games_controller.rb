@@ -29,7 +29,7 @@ class GamesController < ApplicationController
     if @game.update(game_params)
       render json: @game
     else
-      render json: @game.errors, status: :unprocessable_entity
+      render json: @game.errors.full_messages, status: :unprocessable_entity
     end
   end
 
