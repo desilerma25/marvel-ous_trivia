@@ -46,9 +46,7 @@ function createQuestionForm() {
         <input type="submit" value="Add your question!">
     </form>
     `;
-
     questionForm.addEventListener("submit", questionFormSubmit)
-
 }
 
 function addQBtnForm() {
@@ -158,8 +156,6 @@ function renderPlayAgainBtn() {
 
 function renderPlayAgain() {
 
-    // Game.questions = []
-    // console.log(Game.questions)
     let playAgainDiv = document.getElementById("play-again")
     let gameDiv = document.getElementById("games-container")
     playAgainDiv.style.display = "none"

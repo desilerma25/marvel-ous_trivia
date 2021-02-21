@@ -17,9 +17,6 @@ class Question{
         let questionForm = document.getElementById("questions-form")
         const addBtn = document.querySelector("#new-q-btn");
 
-        let notWorthy = document.getElementById("not_worthy")
-        notWorthy.pause();
-
         alert("Thank you for your question submission!")
         questionForm.style.display = "none";
 
@@ -67,16 +64,12 @@ class Question{
         for (let i = 0, length = answerChoices.length; i < length; i++) {
             if (answerChoices[i].checked) {
                 selected = answerChoices[i].value
-                // console.log("user selection", selected)
-                // console.log("correct", this.correct_answer)
                 if (selected === this.correct_answer) {
                     alert("That was correct. Excelsior!")
-                    // console.log("correct, go to next")
                     this.game.score++
                 }
                 else {
                     alert("That was false you puny human.")
-                    // console.log("FALSE, but still next")
                 }
                 this.game.renderIndividualQ();
                 this.questionDiv.remove();
