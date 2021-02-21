@@ -51,7 +51,7 @@ button {
     width: 25%;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 100%;
+    /* border-radius: 100%; */
 }
 
 button:hover {
@@ -73,7 +73,8 @@ button#new-q-btn {
     color: rgb(240, 240, 240);
     width: 20%;
     display: block;
-    
+    border-radius: 50%;
+    padding: 1%;
 }
 
 #games-container {
