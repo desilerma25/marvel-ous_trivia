@@ -6,6 +6,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 70px 0;
+    display: block;
 
    
 }
@@ -22,12 +26,11 @@ input {
     background-color: rgba(254, 254, 254, 0.414);
     padding-top: 10px;
     padding-bottom: 5px;
-    /* line-height: 110%; */
-    /* box-shadow: peru; */
+
 }
 
 /* header {
-    position: relative;
+    position: center;
     width: 50%;
     size: 10px;
 } */
@@ -36,6 +39,7 @@ img {
     height: 200px;
     width: 600px;
     /* width is 3xs as big as height */ 
+    padding: 0px;
     margin-left: auto;
     margin-right: auto; 
     display: block;
@@ -44,6 +48,7 @@ img {
 
 header {
     align-content: center;
+    padding: 0px;
 }
 
 button {
@@ -51,8 +56,9 @@ button {
     font-family: "Earth's Mightiest";
     font-size: 200%;
     color: rgb(240, 240, 240);
-    width: 33%;
-    
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
     
 }
 
@@ -68,32 +74,26 @@ button:hover {
     width: 33%;
 }
 
-#new-q-btn {
-    background-color: rgb(0, 0, 0);
-    font-family: "Earth's Mightiest";
-    font-size: 35px;
-    color: rgb(240, 240, 240);
-    width: 25%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-top: auto; 
-}
-
-#new-q-btn {
+button#new-q-btn {
     background-color: rgb(186, 30, 35);
     font-family: "Earth's Mightiest";
     font-size: 35px;
     color: rgb(240, 240, 240);
-    width: 33%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 20%;
+    display: block;
+    /* margin-left: 38.8%; */
+    /* margin-right: 30%; */
     border-radius: 50px;
-    /* left: 50px; */
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    /* padding: 70px 0; */
+    /* align-content: center; */
 }
 
 #games-container {
     text-align: center;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 #startGame {
@@ -107,12 +107,17 @@ button:hover {
     border: 0px;
     background-color: rgba(254, 254, 254, 0.414);
     padding-top: 0px;
-    /* padding-bottom: 5px; */
-    /* margin-bottom: 5px; */
 }
 
-.answer {
+button.answer {
     font-size: 75%;
-    width: 25%;
+    width: 10%;
+    margin-bottom: 10px;
 }
+
+button.play-again-btn {
+    padding: 10px;
+}
+
+
 
