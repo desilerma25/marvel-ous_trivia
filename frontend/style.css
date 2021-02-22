@@ -51,6 +51,7 @@ button {
     width: 25%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
     /* border-radius: 100%; */
 }
 
@@ -106,7 +107,7 @@ button.play-again-btn {
 
 p {
     /* display: block;  */
-    padding-left: 50px;
+    /* padding-left: 50px; */
 }
 
 
