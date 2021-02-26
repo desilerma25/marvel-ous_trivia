@@ -10,6 +10,7 @@ class Question{
         this.option_c = option_c
         this.option_d = option_d
         this.questionDiv = document.createElement("div")
+        // this.secretWin()
     }
 
     // render popup saying q was saved and hide form
@@ -54,6 +55,7 @@ class Question{
         answerBtn.innerHTML = `Check your answer`
         this.questionDiv.append(answerBtn)
         answerBtn.addEventListener("click", () => this.checkForAnswer())
+        // this.secretWin()
     }
 
     checkForAnswer () {
@@ -76,4 +78,20 @@ class Question{
             }
         }
     }
+
+    // Code to hide a secret win when logo clicked
+    // secretWin() {
+    //     //listen for click on img
+    //     // mark answer as correct
+    //     let marvelous = document.getElementById("marvelous-trivia")
+    //     marvelous.addEventListener("click", () => this.excelsior())
+    // }
+
+    // excelsior() {
+    //     // debugger;
+    //     this.game.score++
+    //     alert("You've found a secret win!")
+    //     this.game.renderIndividualQ();
+    //     this.questionDiv.remove();
+    // }
 }

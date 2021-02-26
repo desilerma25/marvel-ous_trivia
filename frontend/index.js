@@ -13,7 +13,6 @@ function fetchGames() {
     fetch(`${BASE_URL}/games`)
     .then(resp => resp.json())
     .then(games => {
-        // we do something w data we fetched
         for (const game of games) {
             let g = new Game(game.id, game.difficulty)
             g.renderGame();
