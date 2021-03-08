@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'games#index'
   # resources :questions
   resources :games do
     resources :questions, only: [:index]
