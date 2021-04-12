@@ -11,7 +11,12 @@ const BASE_URL = 'https://warm-fortress-93626.herokuapp.com/'
 
 //need a read (fetch games index)
 function fetchGames() {
-    fetch(`${BASE_URL}/games`)
+    fetch(`${BASE_URL}/games`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        }
+    })
     .then(resp => resp.json())
     .then(games => {
         for (const game of games) {
