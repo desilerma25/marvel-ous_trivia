@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 // const BASE_URL = "http://127.0.0.1:3000"
-const BASE_URL = 'https://warm-fortress-93626.herokuapp.com/'
+const BASE_URL = 'https://warm-fortress-93626.herokuapp.com'
 
 //need a read (fetch games index)
 function fetchGames() {
