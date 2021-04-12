@@ -34,7 +34,7 @@ class Game{
 
         fetch(`${BASE_URL}/games/${this.id}/questions`)
         .then(resp => resp.json())
-        .then(questions => {git 
+        .then(questions => { 
             for (const question of questions) {
                 let q = new Question(question.game_id, this, question.content, question.correct_answer, question.option_a, question.option_b, question.option_c, question.option_d)
                 this.questions.push(q);
