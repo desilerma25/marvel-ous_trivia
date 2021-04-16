@@ -11,6 +11,9 @@ To begin this application, in your terminal, cd into the backend folder and run 
 **VIDEO WALK THROUGH:** 
 https://youtu.be/UVfy_5rHp3Q
 
+**GAME URL**
+https://marvelous-trivia.netlify.app/
+
 **CONTRIBUTORS:** If you would like to add to or collaborate on this program please email me at desi.lerma96@yahoo.com.
 
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) Details: https://creativecommons.org/licenses/by-nc-sa/4.0/
